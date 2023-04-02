@@ -2,7 +2,7 @@
 
 ## Overview of the Analysis
 
-Background
+### Background
 The nonprofit foundation Alphabet Soup wants a tool that can help it select the applicants for funding with the best chance of success in their ventures. With your knowledge of machine learning and neural networks, you’ll use the features in the provided dataset to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup.
 
 In this deep learning model, the following features will be transformed, and selected, with a goal to achieve 75% accuracy.  
@@ -19,25 +19,36 @@ In this deep learning model, the following features will be transformed, and sel
 * **ASK_AMT**—Funding amount requested
 * **IS_SUCCESSFUL**—Was the money used effectively
 
-The dataset suffers through a rare-case where the status of defaulted loans is signficantly lower than healthy loans. Resampling would later be used to address the problem in the results section. 
+### Data Exploration 
 
-| loan_status | Frequency | 
-|------------:|----------:|
-|           0 |     75036 |  
-|           1 |      2500 |  
+The dataset does not suffer through rare-case and oversampling or other techniques is not needed. 
 
-0 - healthy loan || 
-1 - defaulted loan 
+![image](https://user-images.githubusercontent.com/89043234/229328422-bfc8acc9-b0b6-4e80-978a-e6cc5392f95a.png)
 
-Based on PCA and visualization of the data, the pattern suggest that a linear classification method (logistic regression) should be applied - followed by resampling. 
+0 - NOT SUCCESSFUL || 
+1 - IS SUCCESSFUL
 
-![image](https://user-images.githubusercontent.com/89043234/228358870-1075fd8c-2f9c-43e3-8cc8-c8e1749033e9.png)
+Based on PCA and visualization of the data, the pattern suggest that a non-linear method should be applied. 
+
+![image](https://user-images.githubusercontent.com/89043234/229328472-3eed192c-6c05-4234-8e70-f1c38c66d14a.png)
+
+### Data Transformation/Methodology  
+
+1. The EIN and NAME columns were dropped
+
+2. For columns that have more than 10 unique values, binning was used to categorize rare occurances. 
+
+3. One-Hot-Encoding was used to transform categorical data. 
+
+4. The train and test were split 80/20. 
+
+5. The training and testing features were scaled with StandardScaler() from sklearn. 
+
+6. Various feature selection were used (Correlation against Y, Removal of co-variant and/or low variance features) 
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
-
-* Machine Learning Model 1: Logistic Regression (Before Resampling)
+* Machine Learning Model 1: 
 
 | precision | recall | f1-score |
 |----------:|-------:|---------:|
