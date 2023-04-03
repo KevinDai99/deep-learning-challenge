@@ -48,7 +48,7 @@ Based on PCA and visualization of the data, the pattern suggest that a non-linea
 
 ## Results
 
-* Machine Learning Model 1: Control (No Feature Selection or HyperOptimization)
+## Machine Learning Model 1: Control (No Feature Selection or HyperOptimization)
 
 #### Data Preprocessing 
 * Variable Target: **IS_SUCCESSFUL** - predicts whether the funded organization will be sucessful
@@ -68,15 +68,33 @@ Based on PCA and visualization of the data, the pattern suggest that a non-linea
 
 
 
-* Machine Learning Model 2: Logistic Regression (After Resampling)
+## Machine Learning Model 2: Feature Selection & HyperOptimization 
 
-| precision | recall | f1-score |
-|----------:|-------:|---------:|
-|         0 |   1.00 |     0.99 |
-|         1 |   0.85 |     0.99 |
-|  accuracy |   0.99 |    15508 |
+#### Data Preprocessing 
+* Variable Target: **IS_SUCCESSFUL** - predicts whether the funded organization will be sucessful
+* All Variables were inputted, except for rare cases which were binned. Various Feature selection methods (Correlation against Y, Co-variance Matrix [Figure Appendix], Variance Threshold) were combined to construct a library of features. After testing, the best performance was ID #19 with 49 features. 
+
+
+* EIN, and NAME were dropped 
+
+#### Compiling, Training, & Evaluating the Model
+* HyperOptimization was used the increase model performance.  
+* * Neural Structure (31, 128, 128, 1) 
+* This model was not able to achieve the 75% accuraccy. 
+
+| precision | recall | f1-score | support |      |
+|----------:|-------:|---------:|---------|------|
+|         0 |   0.75 |     0.65 | 0.70    | 3207 |
+|         1 |   0.73 |     0.80 | 0.76    | 3653 |
+|  accuracy | 73.40% |          |         |      |
 
 
 ## Summary
 
 The logistic regression models overall are better at predicting healthy loans (0) relative to high-risk loan. This is expected due to the significant disparity between healthy and high-risk loans. However, the oversampled data still predicts healthy loans (0) relatively better than high-risk loan (1). As seenm, the recall has significantly improved for high-risk loans at a slight sacrifice of recall for healthy loans - and should be the recommended model to predict unseen data. 
+
+## Appendix
+
+[Figure Appendix]
+
+![image](https://user-images.githubusercontent.com/89043234/229412083-faf2346b-776b-42e0-b511-f3783ccd6e2c.png)
