@@ -60,7 +60,7 @@ Based on PCA and visualization of the data, the pattern suggest that a non-linea
 * No steps were taken to improve model performance as this model served as control
 * This model was not able to achieve the 75% accuraccy. 
 
-| precision | recall | f1-score | support |      |
+|           | precision | recall | f1-score | support |
 |----------:|-------:|---------:|---------|------|
 |         0 |   0.75 |     0.62 | 0.68    | 3207 |
 |         1 |   0.71 |     0.82 | 0.76    | 3653 |
@@ -82,35 +82,36 @@ Based on PCA and visualization of the data, the pattern suggest that a non-linea
 * * Neural Structure (96, 48, 224, 96, 1) 
 * This model was not able to achieve the 75% but increased in overall accuracy by 0.5% - showing improvement in identifying non-successful organizations
 
-| precision | recall | f1-score | support |      |
-|----------:|-------:|---------:|---------|------|
-|         0 |   0.75 |     0.65 | 0.70    | 3207 |
-|         1 |   0.73 |     0.80 | 0.76    | 3653 |
-|  accuracy | 73.40% |          |         |      |
+|          | precision | recall | f1-score | support |
+|---------:|----------:|-------:|---------:|---------|
+|        0 |      0.75 |   0.65 | 0.70     | 3207    |
+|        1 |      0.73 |   0.80 | 0.76     | 3653    |
+| accuracy |    73.40% |        |          |         |
 
 ## Machine Learning Model 3: Inclusion of Name into Model 
 
 #### Data Preprocessing 
 * Variable Target: **IS_SUCCESSFUL** - predicts whether the funded organization will be sucessful
-* All Variables were inputted, except for rare cases which were binned. Various Feature selection methods (Correlation against Y, Co-variance Matrix [Figure Appendix], Variance Threshold) were combined to construct a library of features. After testing, the best performance was ID #19 with 49 features. 
+* All Variables were inputted, except for rare cases which were binned. 
 * EIN dropped, but **NAME** is kepted. 
 
 #### Compiling, Training, & Evaluating the Model
-* HyperOptimization was used the increase model performance - the best params are shown below  
-* * Neural Structure (96, 48, 224, 96, 1) 
-* This model was not able to achieve the 75% but increased in overall accuracy by 0.5% - showing improvement in identifying non-successful organizations
+* Neural Structure (31, 128, 128, 128, 1) 
+* No steps were taken to improve model as it satisfys the challenge condition.
+* This model was able to achieve the condition of being over 75% in accuracy.
 
-| precision | recall | f1-score | support |      |
-|----------:|-------:|---------:|---------|------|
-|         0 |   0.75 |     0.65 | 0.70    | 3207 |
-|         1 |   0.73 |     0.80 | 0.76    | 3653 |
-|  accuracy | 73.40% |          |         |      |
+|          | precision | recall | f1-score | support |
+|---------:|----------:|-------:|---------:|--------:|
+|        0 |      0.88 |   0.65 | 0.75     | 3207    |
+|        1 |      0.75 |   0.93 | 0.83     | 3653    |
+| accuracy |     79.7% |        |          |         |
 
+**Accuracy of Model on Trained: 82.16%**
+* The difference between tested and trained model evaluations of 2.46% suggest that the model is not overtrained. However, further test such as cross-validation may need to confirm overfitting. 
 
+## Conclusion
 
-## Summary
-
-The logistic regression models overall are better at predicting healthy loans (0) relative to high-risk loan. This is expected due to the significant disparity between healthy and high-risk loans. However, the oversampled data still predicts healthy loans (0) relatively better than high-risk loan (1). As seenm, the recall has significantly improved for high-risk loans at a slight sacrifice of recall for healthy loans - and should be the recommended model to predict unseen data. 
+Out of all three models, Model 3, with the inclusion of names may be the best in terms of metrics. However, further testing needs to be done to determine whether overfitting is an issue, and confirm if the addition of names is information leakage. Otherwise, Model 2 may be an alternative model. 
 
 ## Appendix
 
