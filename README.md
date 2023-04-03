@@ -113,9 +113,9 @@ Based on PCA and visualization of the data, the pattern suggest that a non-linea
 
 Out of all three models, Model 3, with the inclusion of names may be the best in terms of metrics. However, further testing needs to be done to determine whether overfitting is an issue, and confirm if the addition of names is information leakage. Otherwise, Model 2 may be an alternative model. 
 
-**Other Machine Learning Model**
+**Other Machine Learning Models**
 
-Other Models such as Random Forest, and XGBoost should also be tested and compared against neural networks. These models have the benefit of being semi-white box models, explainable to stakeholders, and have less-risk of overfitting. 
+Other Models such as Random Forest, XGBoost or other forms of ensemble learning should also be tested and compared against neural networks. These models have the benefit of being semi-white box models, explainable to stakeholders, have less-risk of overfitting, and also have the benefit of capturing non-linear relationships. 
 
 ## Appendix
 
