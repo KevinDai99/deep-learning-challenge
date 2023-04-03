@@ -115,7 +115,7 @@ Out of all three models, Model 3, with the inclusion of names may be the best in
 
 **Other Machine Learning Model**
 
-Other Models such as Random Forest, and XGBoost may also be tested and compared against neural networks. These models have the benefit of being semi-white box models, explainable to stakeholders, and have less-risk of overfitting. 
+Other Models such as Random Forest, and XGBoost should also be tested and compared against neural networks. These models have the benefit of being semi-white box models, explainable to stakeholders, and have less-risk of overfitting. 
 
 ## Appendix
 
