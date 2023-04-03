@@ -48,13 +48,25 @@ Based on PCA and visualization of the data, the pattern suggest that a non-linea
 
 ## Results
 
-* Machine Learning Model 1: 
+* Machine Learning Model 1: Control (No Feature Selection or HyperOptimization)
 
-| precision | recall | f1-score |
-|----------:|-------:|---------:|
-|         0 |   1.00 |     1.00 |
-|         1 |   0.86 |     0.91 |
-|  accuracy |   0.99 |    15508 |
+#### Data Preprocessing 
+* Variable Target: **IS_SUCCESSFUL** - predicts whether the funded organization will be sucessful
+* All Variables were inputted, except for rare cases which were binned. 
+* EIN, and NAME were dropped 
+
+#### Compiling, Training, & Evaluating the Model
+* Neural Structure (31, 128, 128, 1) 
+* No steps were taken to improve model performance as this model served as control
+* This model was not able to achieve the 75% accuraccy. 
+
+| precision | recall | f1-score | support |      |
+|----------:|-------:|---------:|---------|------|
+|         0 |   0.75 |     0.62 | 0.68    | 3207 |
+|         1 |   0.71 |     0.82 | 0.76    | 3653 |
+|  accuracy | 72.86% |          |         |      |
+
+
 
 * Machine Learning Model 2: Logistic Regression (After Resampling)
 
