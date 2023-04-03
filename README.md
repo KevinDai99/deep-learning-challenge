@@ -78,15 +78,34 @@ Based on PCA and visualization of the data, the pattern suggest that a non-linea
 * EIN, and NAME were dropped 
 
 #### Compiling, Training, & Evaluating the Model
-* HyperOptimization was used the increase model performance.  
-* * Neural Structure (31, 128, 128, 1) 
-* This model was not able to achieve the 75% accuraccy. 
+* HyperOptimization was used the increase model performance - the best params are shown below  
+* * Neural Structure (96, 48, 224, 96, 1) 
+* This model was not able to achieve the 75% but increased in overall accuracy by 0.5% - showing improvement in identifying non-successful organizations
 
 | precision | recall | f1-score | support |      |
 |----------:|-------:|---------:|---------|------|
 |         0 |   0.75 |     0.65 | 0.70    | 3207 |
 |         1 |   0.73 |     0.80 | 0.76    | 3653 |
 |  accuracy | 73.40% |          |         |      |
+
+## Machine Learning Model 3: Inclusion of Name into Model 
+
+#### Data Preprocessing 
+* Variable Target: **IS_SUCCESSFUL** - predicts whether the funded organization will be sucessful
+* All Variables were inputted, except for rare cases which were binned. Various Feature selection methods (Correlation against Y, Co-variance Matrix [Figure Appendix], Variance Threshold) were combined to construct a library of features. After testing, the best performance was ID #19 with 49 features. 
+* EIN dropped, but **NAME** is kepted. 
+
+#### Compiling, Training, & Evaluating the Model
+* HyperOptimization was used the increase model performance - the best params are shown below  
+* * Neural Structure (96, 48, 224, 96, 1) 
+* This model was not able to achieve the 75% but increased in overall accuracy by 0.5% - showing improvement in identifying non-successful organizations
+
+| precision | recall | f1-score | support |      |
+|----------:|-------:|---------:|---------|------|
+|         0 |   0.75 |     0.65 | 0.70    | 3207 |
+|         1 |   0.73 |     0.80 | 0.76    | 3653 |
+|  accuracy | 73.40% |          |         |      |
+
 
 
 ## Summary
