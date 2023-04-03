@@ -2,7 +2,7 @@
 
 ## Overview of the Analysis
 
-### Background
+### Background/Purpose of Analysis 
 The nonprofit foundation Alphabet Soup wants a tool that can help it select the applicants for funding with the best chance of success in their ventures. With your knowledge of machine learning and neural networks, you’ll use the features in the provided dataset to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup.
 
 In this deep learning model, the following features will be transformed, and selected, with a goal to achieve 75% accuracy.  
@@ -112,6 +112,10 @@ Based on PCA and visualization of the data, the pattern suggest that a non-linea
 ## Conclusion
 
 Out of all three models, Model 3, with the inclusion of names may be the best in terms of metrics. However, further testing needs to be done to determine whether overfitting is an issue, and confirm if the addition of names is information leakage. Otherwise, Model 2 may be an alternative model. 
+
+**Other Machine Learning Model**
+
+Other Models such as Random Forest, and XGBoost may also be tested and compared against neural networks. These models have the benefit of being semi-white box models, explainable to stakeholders, and have less-risk of overfitting. 
 
 ## Appendix
 
