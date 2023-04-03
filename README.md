@@ -44,7 +44,7 @@ Based on PCA and visualization of the data, the pattern suggest that a non-linea
 
 5. The training and testing features were scaled with StandardScaler() from sklearn. 
 
-6. Various feature selection were used (Correlation against Y, Removal of co-variant and/or low variance features) 
+6. Various feature selection methods were used (Correlation against Y, Removal of co-variant and/or low variance features) to determine variables. 
 
 ## Results
 
